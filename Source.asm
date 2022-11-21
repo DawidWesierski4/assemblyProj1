@@ -3,6 +3,7 @@
 .model flat
 
 public _szukaj_max
+public _szukaj4_max
 
 
 .code
@@ -32,5 +33,32 @@ public _szukaj_max
 				mov eax, [ebp+12] ; liczba y
 				jmp zakoncz
 	_szukaj_max ENDP
+
+
+	_szukaj4_max PROC
+		push ebp
+		mov ebp, esp;
+		mov ecx, ebp;
+		add ecx, 20;
+
+		mov ebx, ebx
+		add ebx, 8
+		mov eax, [ebx]
+
+		loopStart:
+			add ebx, 4
+			cmp [ebx], eax
+
+			jg ifNotGrater ; if eax our biggest value < stack[ebx]
+				mov eax, [ebx]
+			ifNotGrater:
+
+			cmp ecx, ebx
+			je return	
+
+	return:
+		pop ebp
+		ret
+	_szukaj4_max ENDP
 
 END
