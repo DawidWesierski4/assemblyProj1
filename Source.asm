@@ -65,8 +65,8 @@ public _plus_jeden
 		mov ebp,esp ; kopiowanie zawartoœci ESP do EBP
 
 		push ebx ; przechowanie zawartoœci rejestru EBX
-	; wpisanie do rejestru EBX adresu zmiennej zdefiniowanej
-	; w kodzie w jêzyku C
+		; wpisanie do rejestru EBX adresu zmiennej zdefiniowanej
+		; w kodzie w jêzyku C
 
 		mov ebx, [ebp+8]
 		mov eax, [ebx] ; odczytanie wartoœci zmiennej
@@ -78,7 +78,17 @@ public _plus_jeden
 
 		pop ebx
 		pop ebp
-		ret
+		ret	
 	_plus_jeden ENDP
+
+	_oppsite_nmbr PROC
+		push ebp
+		mov ebp, esp
+
+		
+
+		pop ebp
+		ret
+	_oppsite_nmbr ENDP
 
 END
