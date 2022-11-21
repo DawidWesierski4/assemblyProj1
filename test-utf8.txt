@@ -1,4 +1,22 @@
-; program przyk³adowy (wersja 32-bitowa)
+ï»¿.686
+	.model flat
+	extern _ExitProcess@4 : PROC
+	extern __write : PROC 
+	public _main
+
+.data
+	startingMssg db 'hello world'
+
+.code
+	_main PROC
+		push dw 12
+		push dword PTR OFFSET+1 ;we add one to push the newline
+		push dword PTR 1
+		call __write
+	_main ENDP
+
+END
+; program przykÅ‚adowy (wersja 32-bitowa)
 .686
 .model flat
 
@@ -7,8 +25,8 @@ public _szukaj_max
 
 .code
 	_szukaj_max PROC
-		push ebp ; zapisanie zawartoœci EBP na stosie
-		mov ebp, esp ; kopiowanie zawartoœci ESP do EBP
+		push ebp ; zapisanie zawartoÅ›ci EBP na stosie
+		mov ebp, esp ; kopiowanie zawartoÅ›ci ESP do EBP
 		mov eax, [ebp+8] ; liczba x
 		cmp eax, [ebp+12] ; porownanie liczb x i y
 		jge x_wieksza ; skok, gdy x >= y
@@ -19,7 +37,7 @@ public _szukaj_max
 		jge y_wieksza ; skok, gdy y >= z
 	; przypadek y < z
 
-	; zatem z jest liczb¹ najwieksz¹
+	; zatem z jest liczbÄ… najwiekszÄ…
 		wpisz_z: mov eax, [ebp+16] ; liczba z
 			zakoncz:
 				pop ebp
