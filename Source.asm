@@ -39,7 +39,7 @@ public _szukaj4_max
 		push ebp
 		mov ebp, esp;
 		mov ecx, ebp;
-		add ecx, 24;
+		add ecx, 20;
 
 		mov ebx, ebp
 		add ebx, 8
@@ -54,9 +54,8 @@ public _szukaj4_max
 			ifNotGrater:
 
 			cmp ecx, ebx
-			je return	
+			jne loopStart
 
-	return:
 		pop ebp
 		ret
 	_szukaj4_max ENDP
