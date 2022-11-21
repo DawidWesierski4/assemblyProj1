@@ -57,3 +57,5 @@ dkms.conf
 *.vcxproj.filters
 *.vcxproj.user
 .vs/
+Debug/
+x64/
