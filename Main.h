@@ -6,4 +6,7 @@ int szukaj_max(int a, int b, int c);
 //acts like szukaj_max but for 4 values
 int szukaj4_max(int a, int b, int c, int d);
 
-#endif /* headerguard main_h*/
+//egzample of incrising a value
+void plus_jeden(int* a);
+
+#endif /* headerguard main_h */

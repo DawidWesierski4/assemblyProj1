@@ -2,14 +2,14 @@
 #include "Main.h"
 #include <windows.h>
 
-int main(void)
+void zadanie4_1()
 {
 	SetConsoleOutputCP(1250); //ading the current code page
 	int x, y, z, z4, wynik;
 
 	printf("\nProszê podaæ trzy liczby ca³kowite: ");
 	scanf_s("%d %d %d", &x, &y, &z);
-	
+
 	wynik = szukaj_max(x, y, z);
 
 	printf("\nSpoœród podanych liczb %d, %d, %d, \
@@ -22,6 +22,14 @@ int main(void)
 
 	printf("\nSpoœród podanych liczb %d, %d, %d, %d \
 	liczba %d jest najwiêksza\n", x, y, z, z4, wynik);
+}
+
+int main(void)
+{
+	int m;
+	m = -5;
+	plus_jeden(&m);
+	printf("\n m = %d\n", m);
 
 	return 0;
 }
