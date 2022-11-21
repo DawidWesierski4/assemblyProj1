@@ -39,15 +39,15 @@ public _szukaj4_max
 		push ebp
 		mov ebp, esp;
 		mov ecx, ebp;
-		add ecx, 20;
+		add ecx, 24;
 
-		mov ebx, ebx
+		mov ebx, ebp
 		add ebx, 8
 		mov eax, [ebx]
 
 		loopStart:
 			add ebx, 4
-			cmp [ebx], eax
+			cmp eax, [ebx]
 
 			jg ifNotGrater ; if eax our biggest value < stack[ebx]
 				mov eax, [ebx]

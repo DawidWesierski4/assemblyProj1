@@ -20,8 +20,8 @@ int main(void)
 
 	wynik = szukaj4_max(x, y, z, z4);
 
-	printf("\nSpoœród podanych liczb %d, %d, %d, \
-	liczba %d jest najwiêksza\n", x, y, z, wynik);
+	printf("\nSpoœród podanych liczb %d, %d, %d, %d \
+	liczba %d jest najwiêksza\n", x, y, z, z4, wynik);
 
 	return 0;
 }
