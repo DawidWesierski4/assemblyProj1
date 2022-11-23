@@ -76,10 +76,10 @@ zadanie4_3()
 	wsk = &k;
 
 	printf("\nProsze napisac liczbe: ");
-	scanf_s("%d", &k, 12);
+	scanf_s("%d", &k);
 		odejmij_jeden(&wsk);
 	printf("\nWynik = %d\n", k);
-	return 0;
+	return;
 }
 
 void
