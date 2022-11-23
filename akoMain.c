@@ -25,7 +25,7 @@ def(void) {
 void
 zadanie4_5()
 {
-	printf("suma = %d\n",suma_siedmiu_liczb(1, 2, 3, 4, 5, 6, 7));
+	printf("suma = %lld\n",suma_siedmiu_liczb(1, 2, 3, 4, 5, 6, 7));
 	return;
 }
 
