@@ -1,21 +1,9 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <stdint.h>
+extern __int64 szukaj64_max(__int64* tablica, __int64 n);
 
-int32_t szukaj_max(int32_t a, int32_t b, int32_t c);
-
-//acts like szukaj_max but for 4 values
-int32_t szukaj4_max(int32_t a, int32_t b, int32_t c, int32_t d);
-
-//egzample of incrising a value
-void plus_jeden(int32_t* a);
-
-//returns oppsite number
-int32_t oppsite_nmbr(int32_t* a);
-
-void odejmij_jeden(int** liczba);
-
-void przestaw(int tabl[], int n);
+__int64 suma_siedmiu_liczb(__int64 v1, __int64 v2, __int64
+	v3, __int64 v4, __int64 v5, __int64 v6, __int64 v7);
 
 #endif /* headerguard main_h */
