@@ -5,7 +5,8 @@
 public _szukaj_max
 public _szukaj4_max
 public _plus_jeden
-_oppsite_nmbr
+public _oppsite_nmbr
+public _przestaw
 
 
 .code
@@ -138,7 +139,7 @@ _oppsite_nmbr
 		; zamiana s¹siednich elementów tablicy
 
 		mov edx, [ebx+4]
-		mov [ebx], edx13
+		mov [ebx], edx
 		mov [ebx+4], eax
 		gotowe:
 		add ebx, 4 ; wyznaczenie adresu kolejnego elementu
