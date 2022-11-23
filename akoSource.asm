@@ -38,4 +38,21 @@ szukaj64_max PROC
 	pop rbx
 	ret
 szukaj64_max ENDP
+
+suma_siedmiu_liczb PROC
+	push rbx
+	push rsi;
+	mov rax, 0
+	add rax, rcx
+	add rax, rdx
+	add rax, r8
+	add rax, r9
+	add rax, [rbp - 16]
+	add rax, [rbp - 24]
+	add rax, [rbp - 32]
+
+	pop rsi
+	pop rbx
+	ret
+suma_siedmiu_liczb ENDP
 END
