@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <windows.h>
 #include <stdlib.h>
-#include "Main.h"
+#include "Main64.h"
 
 #define TEST_STEP 33
 
