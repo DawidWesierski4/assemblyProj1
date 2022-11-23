@@ -5,6 +5,7 @@
 public _szukaj_max
 public _szukaj4_max
 public _plus_jeden
+_oppsite_nmbr
 
 
 .code
@@ -64,7 +65,7 @@ public _plus_jeden
 		push ebp ; zapisanie zawartoœci EBP na stosie
 		mov ebp,esp ; kopiowanie zawartoœci ESP do EBP
 
-		push ebx ; przechowanie zawartoœci rejestru EBX
+		push ebx
 		; wpisanie do rejestru EBX adresu zmiennej zdefiniowanej
 		; w kodzie w jêzyku C
 
@@ -84,11 +85,70 @@ public _plus_jeden
 	_oppsite_nmbr PROC
 		push ebp
 		mov ebp, esp
+		push ebx
+		push ecx
 
-		
 
+		mov ebx, [ebp+8]
+		mov eax, [ebx]
+		mov ecx, -1
+		mul ecx
+		mov [ebx], eax
+
+		pop ecx
+		pop ebx
 		pop ebp
 		ret
 	_oppsite_nmbr ENDP
+
+	_odejmij_jeden PROC
+		push ebp
+		mov ebp, esp
+		push ebx
+		push ecx
+
+		mov ecx, [ebp+8]
+		mov ebx, [ecx]
+		mov eax, [ebx]
+
+		dec eax
+		
+		mov [ebx], eax
+
+		pop ecx
+		pop ebx
+		pop ebp
+		ret
+	_odejmij_jeden ENDP
+
+	_przestaw PROC
+		push ebp ; zapisanie zawartoœci EBP na stosie
+		mov ebp,esp ; kopiowanie zawartoœci ESP do EBP
+		push ebx ; przechowanie zawartoœci rejestru EBX
+		mov ebx, [ebp+8] ; adres tablicy tabl
+		mov ecx, [ebp+12] ; liczba elementów tablicy
+		dec ecx
+		; wpisanie kolejnego elementu tablicy do rejestru EAX
+
+		ptl: mov eax, [ebx]
+		; porównanie elementu tablicy wpisanego do EAX z nastêpnym
+
+		cmp eax, [ebx+4]
+		jle gotowe ; skok, gdy nie ma przestawiania
+		; zamiana s¹siednich elementów tablicy
+
+		mov edx, [ebx+4]
+		mov [ebx], edx13
+		mov [ebx+4], eax
+		gotowe:
+		add ebx, 4 ; wyznaczenie adresu kolejnego elementu
+
+		loop ptl ; organizacja pêtli
+		pop ebx ; odtworzenie zawartoœci rejestrów
+
+		pop ebp
+		ret ; powrót do programu g³ównego
+	_przestaw ENDP
+
 
 END
