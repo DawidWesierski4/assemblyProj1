@@ -105,9 +105,9 @@ zadanie4_4(void)
 	}
 	printf("}\n");
 
-	qsort(arrResult, size, sizeof(arr[0]), comp);
+	qsort(arrResult, size, sizeof(arrResult[0]), comp);
 	for (i = size; i > 1; i--) {
-		przestaw(arr, size);
+		przestaw(arr, i);
 	}
 
 	printf("Result \n{ ");
